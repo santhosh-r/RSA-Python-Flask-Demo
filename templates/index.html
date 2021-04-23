@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+<p><b>Public Key Pair:</b></p>
+<p class='long-text'>{{ publickp }}</p>
+<br />
+{{ wtf.quick_form(form) }}
+<br/>
+{% if dmsg %}
+    <p><b>Stats:</b></p>
+    <div class="panel panel-default">
+        <div class="panel-body long-text">
+            Number of characters: {{ msg_len }}<br/>
+            Original Message Size: {{ dmsg_size }}<br/>
+            Encrypted Message Size: {{ emsg_size }}<br/>
+            Ratio: {{ emsg_size/dmsg_size }}<br/>
+            Encryption Time: {{ etime }} seconds<br/>
+            Decryption Time: {{ dtime }} seconds<br/>
+        </div>
+    </div>
+    <p><b>Decrypted Message:</b></p>
+    <p style="white-space: pre-wrap;">{{ dmsg }}</p>
+{% endif %}
+{% if emsg %}
+    <p><b>Encrypted Message:</b></p>
+    <p class='long-text'>{{ emsg }}</p>
+{% endif %}
+<footer class="page-footer">
+    <p/>
+    <p>{{ moment(current_time).format('LLL') }}</p>
+</footer>
+{% endblock %}
