@@ -1,5 +1,5 @@
 # RSA-Python-Flask-Demo
-A simple demonstration of the RSA cryptosystem using Flask framework submitted for the Discrete Mathematics course CSI 521 at UAlbany.
+A simple demonstration of the RSA cryptosystem using Flask framework submitted for the Discrete Mathematics with Applications course CSI 521 at UAlbany.
 
 ```
 To execute demo program
@@ -11,3 +11,5 @@ Required Python 3 libraries:
     flask-wtf
     flask-moment
 ```
+
+![](images/example.png?raw=true)
